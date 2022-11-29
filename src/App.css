@@ -2,7 +2,9 @@
 
 
 .App {
+   
 }
+
 
 .BakeryItem {
 }
@@ -10,24 +12,16 @@
 img {
     width: 100%;
 }
+.class-wrapper{
+    margin-left: 10vw;
+}
 
 
 .items{
-    width: 30%;
+    width: 50%;
     padding: 20px;
     margin: 2%;
     border: 1px solid #d9d9d9;
     border-radius: 20px;
 }
 
-.cart{
-    padding: 20px;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 50px;
-    margin-top: 20px;
-    text-align: center;
-}
-h1{
-    text-align: center;
-}

@@ -17,7 +17,7 @@ function App() {
 
   const updatePrice = () => {
     let sum = 0;
-    
+
     cart.forEach(i => sum += i.price);
 
     setTotal(sum);
@@ -25,27 +25,30 @@ function App() {
 
   }
   useEffect(() => {
-      updatePrice();
+    updatePrice();
   })
 
   return (
     <div className="App">
-      <h1>Muhiim's Bakery</h1> {/* TODO: personalize your bakery (if you want) */}
-      <div class="cart">
+      <div class="class-wrapper">
+        <h1>Muhiim's Bakery</h1> {/* TODO: personalize your bakery (if you want) */}
+
         <h2>Cart</h2>
         {/* TODO: render a list of items in the cart */}
-            {cart.map((e, i) => <p key={i}>{e.name}</p>)}
-            <h4>Total: ${total}</h4>
+        {cart.map((e, i) => <p key={i}>{e.name}</p>)}
+        <h4>Total: ${total}</h4>
+
+        <div class="wrapper">
+          {bakeryData.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
+            // <p>Bakery Item {index}</p> // replace with BakeryItem component
+            <BakeryItem item={item} key={index} cart={cart} updateCart={setCart} total={total} setTotal={setTotal} />
+          ))}
+        </div>
+
       </div>
 
-      <div class="wrapper">
-      {bakeryData.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
-        // <p>Bakery Item {index}</p> // replace with BakeryItem component
-        <BakeryItem item={item} key={index} cart={cart} updateCart={setCart} total={total} setTotal={setTotal}/>
-      ))}
-      </div>
 
-     
+
     </div>
   );
 }
