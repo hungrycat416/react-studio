@@ -31,6 +31,12 @@ function App() {
   return (
     <div className="App">
       <h1>Muhiim's Bakery</h1> {/* TODO: personalize your bakery (if you want) */}
+      <div class="cart">
+        <h2>Cart</h2>
+        {/* TODO: render a list of items in the cart */}
+            {cart.map((e, i) => <p key={i}>{e.name}</p>)}
+            <h4>Total: ${total}</h4>
+      </div>
 
       <div class="wrapper">
       {bakeryData.map((item, index) => ( // TODO: map bakeryData to BakeryItem components
@@ -39,12 +45,7 @@ function App() {
       ))}
       </div>
 
-      <div class="cart">
-        <h2>Cart</h2>
-        {/* TODO: render a list of items in the cart */}
-            {cart.map((e, i) => <p key={i}>{e.name}</p>)}
-            <h4>Total: ${total}</h4>
-      </div>
+     
     </div>
   );
 }
